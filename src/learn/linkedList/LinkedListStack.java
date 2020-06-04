@@ -1,8 +1,7 @@
-package linkedList;
+package learn.linkedList;
 
 
-import learn.linkedList.LinkedList;
-import learnTest.stack.Stack;
+import learn.stack.Stack;
 
 /**
  * @Description TODO
