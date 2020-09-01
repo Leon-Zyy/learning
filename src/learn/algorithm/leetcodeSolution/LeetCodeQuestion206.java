@@ -1,4 +1,6 @@
-package learn.dataStructure.solution;
+package learn.algorithm.leetcodeSolution;
+
+import java.util.List;
 
 /**
  * @Description leetCode问题
@@ -9,7 +11,7 @@ package learn.dataStructure.solution;
 public class LeetCodeQuestion206 {
 
     /**
-     * LetCode 203. 倒置单链表 - 常规
+     * LetCode 206. 倒置单链表 - 常规
      * @param head
      * @return
      */
@@ -23,6 +25,20 @@ public class LeetCodeQuestion206 {
             curr = nextTemp;
         }
         return prev;
+    }
+
+    /**
+     * LetCode 203. 倒置单链表 - 递归
+     * @param head
+     * @return
+     */
+    public static ListNode reverseListByRecursive(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
+        ListNode p = reverseListByRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+        return p;
     }
 
     /**
@@ -46,6 +62,6 @@ public class LeetCodeQuestion206 {
             prev = prev.next;
         }
 
-        ListNode handelNode = reverseList(dummyHead);
+        ListNode handelNode = reverseListByRecursive(dummyHead);
     }
 }

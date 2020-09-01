@@ -1,4 +1,4 @@
-package learn.dataStructure.solution;
+package learn.algorithm.leetcodeSolution;
 
 import java.util.*;
 

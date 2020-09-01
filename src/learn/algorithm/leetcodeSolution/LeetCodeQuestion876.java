@@ -1,4 +1,4 @@
-package learn.dataStructure.solution;
+package learn.algorithm.leetcodeSolution;
 
 /**
  * @Description leetCode 876. 链表的中间结点
