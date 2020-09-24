@@ -14,7 +14,7 @@ import java.util.Set;
  * client
  */
 public class Client {
-    ByteBuffer writeBuffer = ByteBuffer.allocate(1024);
+    ByteBuffer writeBuffer = ByteBuffer.allocateDirect(1024);
     ByteBuffer readBuffer = ByteBuffer.allocate(1024);
 
     public void start() throws IOException {
@@ -56,13 +56,6 @@ public class Client {
                     //将缓冲区各标志复位,因为向里面put了数据标志被改变要想从中读取数据发向服务器,就要复位
                     writeBuffer.flip();
                     sc.write(writeBuffer);
-
-                    //注册写操作,每个chanel只能注册一个操作，最后注册的一个生效
-                    //如果你对不止一种事件感兴趣，那么可以用“位或”操作符将常量连接起来
-                    //int interestSet = SelectionKey.OP_READ | SelectionKey.OP_WRITE;
-                    //使用interest集合
-                    sc.register(selector, SelectionKey.OP_READ);
-                    sc.register(selector, SelectionKey.OP_WRITE);
                     sc.register(selector, SelectionKey.OP_READ);
 
                 } else if (key.isReadable()){//读取数据
