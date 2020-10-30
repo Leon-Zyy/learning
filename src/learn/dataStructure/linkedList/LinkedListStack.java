@@ -13,7 +13,7 @@ public class LinkedListStack<E> implements Stack<E> {
 
     private LinkedList<E> list;
 
-    public LinkedListStack(){
+    public LinkedListStack() {
         list = new LinkedList<>();
     }
 
@@ -43,7 +43,7 @@ public class LinkedListStack<E> implements Stack<E> {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder res = new StringBuilder();
 
         res.append("Stack: top ");

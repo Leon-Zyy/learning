@@ -28,7 +28,7 @@ public class Array<E> {
         return data.length;
     }
 
-    public E getFirst(){
+    public E getFirst() {
         return data[0];
     }
 
@@ -113,7 +113,7 @@ public class Array<E> {
 
     private void resize(int newCapacity) {
         E[] newData = (E[]) new Object[newCapacity];
-        for (int i =0;i<size;i++) {
+        for (int i = 0; i < size; i++) {
             newData[i] = data[i];
         }
         data = newData;

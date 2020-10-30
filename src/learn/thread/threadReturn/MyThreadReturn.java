@@ -1,9 +1,12 @@
 package learn.thread.threadReturn;
 
-public class MyThreadReturn implements Runnable{
+public class MyThreadReturn implements Runnable {
 
-    /** 模拟线程执行完毕后主程序要获取的值*/
+    /**
+     * 模拟线程执行完毕后主程序要获取的值
+     */
     private String returnValue;
+
     @Override
     public void run() {
         System.out.println("线程执行......");
@@ -16,7 +19,8 @@ public class MyThreadReturn implements Runnable{
         System.out.println("线程执行完毕......");
         returnValue = "hello world!!!";
     }
-    public String getReturnValue(){
+
+    public String getReturnValue() {
         return returnValue;
     }
 

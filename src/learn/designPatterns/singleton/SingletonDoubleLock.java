@@ -4,7 +4,7 @@ public class SingletonDoubleLock {
 
     private static volatile SingletonDoubleLock singletonDoubleLock;
 
-    private SingletonDoubleLock(){
+    private SingletonDoubleLock() {
     }
 
     public static SingletonDoubleLock getInstance() {

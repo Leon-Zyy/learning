@@ -24,7 +24,7 @@ public class MyCallable implements Callable {
          */
         Thread thread = new Thread(futureTask);
         thread.start();
-        if(!futureTask.isDone()) {
+        if (!futureTask.isDone()) {
             System.out.println("task has not finished, please wait!");
         }
         System.out.println("task return: " + futureTask.get());

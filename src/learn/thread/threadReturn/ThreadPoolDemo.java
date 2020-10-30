@@ -10,7 +10,7 @@ public class ThreadPoolDemo {
     public static void main(String[] args) {
         ExecutorService executorPool = Executors.newCachedThreadPool();
         Future<String> future = executorPool.submit(new MyCallable());
-        if(!future.isDone()) {
+        if (!future.isDone()) {
             System.out.println("task has not finished, please wait!");
         }
         try {
@@ -19,7 +19,7 @@ public class ThreadPoolDemo {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             executorPool.shutdown();
         }
     }

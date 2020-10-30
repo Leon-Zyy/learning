@@ -12,6 +12,7 @@ public class LeetCodeQuestion206 {
 
     /**
      * LetCode 206. 倒置单链表 - 常规
+     *
      * @param head
      * @return
      */
@@ -29,6 +30,7 @@ public class LeetCodeQuestion206 {
 
     /**
      * LetCode 203. 倒置单链表 - 递归
+     *
      * @param head
      * @return
      */

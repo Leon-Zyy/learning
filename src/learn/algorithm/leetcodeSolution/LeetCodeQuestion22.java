@@ -14,7 +14,7 @@ public class LeetCodeQuestion22 {
      * 例如，一个链表有6个节点，从头节点开始，它们的值依次是1、2、3、4、5、6。这个链表的倒数第3个节点是值为4的节点。
      * 示例:
      * 给定一个链表: 1->2->3->4->5, 和 k = 2.
-     *
+     * <p>
      * 解题关键：
      * 1.先移动F(firstNode)K个步长，此时F与Sec(secNode)的距离即为K
      * 2.共同移动 F Sec, 当F==NULL时，即已到链表尾部，那么Sec所在的位置即为倒数第K个结点
@@ -50,6 +50,8 @@ public class LeetCodeQuestion22 {
         ListNode(int x) {
             val = x;
         }
-        ListNode(){}
+
+        ListNode() {
+        }
     }
 }

@@ -65,14 +65,14 @@ public class BST<E extends Comparable<E>> {
 
         if (e.compareTo(node.e) == 0) {
             return true;
-        }else if (e.compareTo(node.e) < 0){
+        } else if (e.compareTo(node.e) < 0) {
             return contains(node.left, e);
-        }else {
+        } else {
             return contains(node.right, e);
         }
     }
 
-    public void preOrder(){
+    public void preOrder() {
         preOrder(root);
     }
 
@@ -86,11 +86,11 @@ public class BST<E extends Comparable<E>> {
         preOrder(node.right);
     }
 
-    public void inOrder(){
+    public void inOrder() {
         inOrder(root);
     }
 
-    private void inOrder(Node node){
+    private void inOrder(Node node) {
         if (node == null) {
             return;
         }
@@ -100,11 +100,11 @@ public class BST<E extends Comparable<E>> {
         inOrder(node.right);
     }
 
-    public void postOrder(){
+    public void postOrder() {
         postOrder(root);
     }
 
-    private void postOrder(Node node){
+    private void postOrder(Node node) {
         if (node == null) {
             return;
         }
@@ -116,7 +116,7 @@ public class BST<E extends Comparable<E>> {
 
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder sb = new StringBuilder();
 
         generateBSTString(root, 0, sb);

@@ -4,5 +4,6 @@ public enum SingletonEnum {
 
     INSTANCE;
 
-    public void getInstance(){}
+    public void getInstance() {
+    }
 }

@@ -8,7 +8,7 @@ public enum SingletonEnum {
 
     INSTANCE;
 
-    public void getInstace(){
+    public void getInstace() {
 
     }
 }

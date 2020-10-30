@@ -17,6 +17,7 @@ public class Server {
     private ByteBuffer sendBuffer = ByteBuffer.allocate(1024);//缓存大小
 
     String str;
+
     public void start() throws IOException {
         // 打开服务套接字通道
         ServerSocketChannel ssc = ServerSocketChannel.open();
@@ -30,7 +31,7 @@ public class Server {
         // 注册到selector，等待连接
         ssc.register(selector, SelectionKey.OP_ACCEPT);
 
-        while (!Thread.currentThread().isInterrupted()){
+        while (!Thread.currentThread().isInterrupted()) {
             selector.select();
             Set<SelectionKey> keys = selector.selectedKeys();
             Iterator<SelectionKey> keyIterator = keys.iterator();
@@ -43,7 +44,7 @@ public class Server {
                     accept(key); // 接受了一个连接
                 } else if (key.isConnectable()) {
                     // 与服务器建立了连接
-                }else if(key.isReadable()) {
+                } else if (key.isReadable()) {
                     read(key); // 一个通道已读就绪
                 } else if (key.isWritable()) {
                     write(key); // 一个通道已写就绪
@@ -63,7 +64,7 @@ public class Server {
      */
     private void write(SelectionKey key) throws IOException, ClosedChannelException {
         SocketChannel channel = (SocketChannel) key.channel();
-        System.out.println("write:"+str);
+        System.out.println("write:" + str);
 
         sendBuffer.clear();
         sendBuffer.put(str.getBytes());
@@ -113,7 +114,7 @@ public class Server {
         SocketChannel clientChannel = ssc.accept();
         clientChannel.configureBlocking(false);
         clientChannel.register(selector, SelectionKey.OP_READ);
-        System.out.println("a new client connected "+clientChannel.getRemoteAddress());
+        System.out.println("a new client connected " + clientChannel.getRemoteAddress());
     }
 
     public static void main(String[] args) throws IOException {

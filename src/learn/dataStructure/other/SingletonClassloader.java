@@ -6,11 +6,12 @@ package learn.dataStructure.other;
  */
 public class SingletonClassloader {
 
-    private static class SingletonLoader{
+    private static class SingletonLoader {
         private static final SingletonClassloader INSTANCE = new SingletonClassloader();
     }
 
-    private SingletonClassloader(){}
+    private SingletonClassloader() {
+    }
 
     public static final SingletonClassloader getInstance() {
         return SingletonLoader.INSTANCE;

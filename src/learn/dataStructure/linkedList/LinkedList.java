@@ -8,7 +8,7 @@ package learn.dataStructure.linkedList;
  */
 public class LinkedList<E> {
 
-    private class Node{
+    private class Node {
         public E e;
         public Node next;
 
@@ -21,37 +21,40 @@ public class LinkedList<E> {
             this(e, null);
         }
 
-        public Node(){
+        public Node() {
             this(null, null);
         }
-    };
+    }
+
+    ;
 
     private Node dummyHead;
     int size;
 
-    public LinkedList(){
+    public LinkedList() {
         dummyHead = new Node(null, null);
         size = 0;
     }
 
-    public int getSize(){
+    public int getSize() {
         return size;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
-    public void addFirst(E e){
+    public void addFirst(E e) {
         add(0, e);
     }
 
-    public void addLast(E e){
+    public void addLast(E e) {
         add(size, e);
     }
 
     /**
      * 不常使用 练习使用
+     *
      * @param index
      * @param e
      */
@@ -74,6 +77,7 @@ public class LinkedList<E> {
 
     /**
      * 常使用 练习使用
+     *
      * @param index
      * @return
      */
@@ -89,15 +93,15 @@ public class LinkedList<E> {
         return curNode.e;
     }
 
-    public E getFirst(){
+    public E getFirst() {
         return get(0);
     }
 
-    public E getLast(){
+    public E getLast() {
         return get(size - 1);
     }
 
-    public void set(int index, E e){
+    public void set(int index, E e) {
         if (index < 0 || index > size)
             throw new IllegalArgumentException("Add failed. Illegal index. ");
 
@@ -109,7 +113,7 @@ public class LinkedList<E> {
         curNode.e = e;
     }
 
-    public boolean contains(E e){
+    public boolean contains(E e) {
         Node curNode = dummyHead.next;
         while (curNode != null) {
             if (curNode.e == e) {
@@ -137,16 +141,16 @@ public class LinkedList<E> {
         return retNode.e;
     }
 
-    public E removeFirst(){
+    public E removeFirst() {
         return remove(0);
     }
 
-    public E removeLast(){
+    public E removeLast() {
         return remove(size - 1);
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder res = new StringBuilder();
 
         Node curNode = dummyHead.next;
